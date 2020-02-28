@@ -1,0 +1,1 @@
+cat $(cat sourceFilesOrder.txt) | coffee --stdio -bc > ./terrarium.js

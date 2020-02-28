@@ -1,0 +1,10 @@
+workSpaceX = 32
+workSpaceY = 32
+workSpaceZ = 32
+gridSizeX = 32
+gridSizeY = 32
+gridSizeZ = 32
+elementsCount = Object.keys(elements).length
+backgroundColor = [0, 0, 0]
+mouseSensitivity = 0.003
+invertHorizMouseDrag = 1

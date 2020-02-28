@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Terrarium</title>
+    <style>
+      canvas { width: 640px; height: 480px; border: 1px solid }
+    </style>
+  </head>
+  <body onload="initCanvasWebGLAndCamera();">
+    <div>
+      <canvas id="theCanvas"></canvas>
+    </div>
+
+    <div id="status-info">
+    </div>
+
+    <div id="buttons-container">
+    </div>
+
+    <a href="./index.html?slowDown=1">slow down</a>
+
+    <button onclick="scenario0()">Clear</button>
+    <button onclick="scenario1()">XYZ</button>
+    <button onclick="scenario2()">Fire on floor</button>
+    <button onclick="scenario5()">Steam on floor</button>
+    <button onclick="scenario3()">WaterFountain</button>
+    <button onclick="scenario4()">OilFountain</button>
+    <button onclick="scenario6()">WaterFountain and OilFountain</button>
+    <button onclick="scenario7()">WaterFountain and OilFountain and Torch</button>
+    <button onclick="scenario8()">Water and Oil stacked</button>
+    <button onclick="scenario9()">Water and Oil column</button>
+    <button onclick="scenario10()">Water column</button>
+    <button onclick="scenario11()">Random fill</button>
+    <button onclick="scenario12()">Steam up roofs</button>
+    <button onclick="scenario13()">Steam layer up incline</button>
+    <button onclick="scenario14()">Steam volume up incline</button>
+    <button onclick="scenario15()">Water layer down incline</button>
+    <button onclick="scenario16()">Water volume down incline</button>
+    <button onclick="scenario17()">Hourglass</button>
+    <button onclick="scenario18()">Fuse grid</button>
+    <button onclick="scenario19()">Fuse axes</button>
+
+    <script src="terrarium.js"></script>
+  </body>
+</html>
