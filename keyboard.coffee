@@ -37,6 +37,22 @@ keyPressed = (e) ->
   if key == 't'
     pauseRendering = !pauseRendering
 
+  if key == '1'
+    bringUpElementList "liquid"
+    if elementSelectList.selectedIndex == -1
+      elementSelectList.selectedIndex = 0
+    elementSelectList.selectedIndex = (elementSelectList.selectedIndex + elementSelectList.length - 1) % elementSelectList.length
+    updateChosenItemBasedOnSelect()
+
+  if key == '2'
+    bringUpElementList "liquid"
+    if elementSelectList.selectedIndex == -1
+      elementSelectList.selectedIndex = 0
+    elementSelectList.selectedIndex = (elementSelectList.selectedIndex + 1) % elementSelectList.length
+    updateChosenItemBasedOnSelect()
+
+
+
 window.addEventListener 'keydown', handleKeydown
 window.addEventListener 'keypress', keyPressed
 window.addEventListener 'keyup', handleKeyup

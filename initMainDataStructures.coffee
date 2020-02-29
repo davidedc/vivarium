@@ -9,13 +9,24 @@ horizontalMotionProbability = newArray elementsCount, 0.0
 elementName = newArray elementsCount, ""
 uElementsColors = new Int32Array(new Array(elementsCount*3).fill(0))
 
+tags = new Set
+elementsInTag = {}
+
 initMainDataStructures = (elementColor, elementDensity, reactionOptions, neighborProbability, transmutationProbability, verticalMotionProbability, horizontalMotionProbability, elementName) ->
   i = 0
   for own key, value of elements
-    addButton i, key
     elementName[i] = key
     elementColor[i] = value.rgb
     elementDensity[i] = value.density
+
+    # take care of elemements' tags
+    if value.tags?
+      for eachTag in value.tags
+        tags.add eachTag
+        if !elementsInTag[eachTag]?
+          elementsInTag[eachTag] = new Set
+        elementsInTag[eachTag].add key
+
     if i > 0
       uElementsColors[3*(i-1) + 0] = elementColor[i][0]
       uElementsColors[3*(i-1) + 1] = elementColor[i][1]
@@ -43,3 +54,4 @@ initMainDataStructures = (elementColor, elementDensity, reactionOptions, neighbo
       horizontalMotionProbability[movingElement] = value.horizontalMoveProb
 
 initMainDataStructures elementColor, elementDensity, reactionOptions, neighborProbability, transmutationProbability, verticalMotionProbability, horizontalMotionProbability, elementName
+initUI()

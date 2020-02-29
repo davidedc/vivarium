@@ -1,5 +1,3 @@
-elementChosenByUserToBeAddedToWorld = 0
-
 render_t0 = 0
 render_tf = 0
 particlesReactions_t0 = 0
