@@ -5,7 +5,6 @@ chooseElementByName = (name) ->
   elementChosenByUserToBeAddedToWorld = elementName.indexOf name
 
 updateChosenItemBasedOnSelect = ->
-  debugger
   selectedTag = elementSelectList.item(elementSelectList.selectedIndex).text
   lastSelectedForTag[currentElementList] = elementSelectList.selectedIndex
   chooseElementByName selectedTag

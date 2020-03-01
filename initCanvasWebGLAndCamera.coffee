@@ -8,8 +8,11 @@ instrumentation_countParticles_t0 = 0
 instrumentation_countParticles_tf = 0
 last_fps_count_time = 0
 
-canvasWidth = 640
-canvasHeight = 480
+# make smaller if you want to render fewer pixels
+# (and yet it will show in the same area, which is controlled
+# by the dimensions in the canvas element)
+canvasWidth = 760
+canvasHeight = 760
 
 rayCastSlot = [0,0,0]
 justInFrontOfRayCastSlot = [0,0,0]
