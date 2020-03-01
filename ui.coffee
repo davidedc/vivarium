@@ -21,12 +21,12 @@ addElementButton = (idNumber, name) ->
   element.setAttribute "onclick", "chooseElementByName(this.value);"
   document.getElementById("buttons-container").appendChild(element)
 
-addTagButton = (idNumber, name) ->
+addTagButton = (name, label) ->
   element = document.createElement "input"
   element.setAttribute "type", "button"
-  element.setAttribute "value", name
-  element.setAttribute "name", idNumber
-  element.setAttribute "onclick", "tagButtonPressed(this.value);"
+  element.setAttribute "value", label
+  element.setAttribute "name", name
+  element.setAttribute "onclick", "tagButtonPressed(this.name);"
   document.getElementById("buttons-container").appendChild(element)
 
 currentElementList = null
@@ -62,7 +62,7 @@ initUI = ->
   for i in [0...elementName.length]
     addElementButton i, elementName[i]
 
-  i = 0
-  for eachTag from tags
-    addTagButton i, eachTag
-    i++
+  addTagButton "gas", "gases [1]"
+  addTagButton "liquid", "liquids [2]"
+  addTagButton "solid", "solids [3]"
+  addTagButton "flammable", "flammables [4]"
