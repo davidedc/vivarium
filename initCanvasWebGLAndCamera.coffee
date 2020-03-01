@@ -42,7 +42,7 @@ initCanvasWebGLAndCamera = ->
 
   # pick some reasonable initial positioning of the camera
   # in this case it's a frontal view looking up the x axis  
-  cameraX = -29
+  cameraX = -32
   cameraY = 15.5
   cameraZ = 16
   pitch = 0
