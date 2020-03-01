@@ -1,10 +1,14 @@
 elementChosenByUserToBeAddedToWorld = 0
+lastSelectedForTag = {}
 
 chooseElementByName = (name) ->
   elementChosenByUserToBeAddedToWorld = elementName.indexOf name
 
 updateChosenItemBasedOnSelect = ->
-  chooseElementByName elementSelectList.item(elementSelectList.selectedIndex).text
+  debugger
+  selectedTag = elementSelectList.item(elementSelectList.selectedIndex).text
+  lastSelectedForTag[currentElementList] = elementSelectList.selectedIndex
+  chooseElementByName selectedTag
 
 userManuallyClickedOnSelectListEntry = ->
   updateChosenItemBasedOnSelect()
@@ -41,7 +45,14 @@ bringUpElementList = (name) ->
   	newOption.text = i
   	elementSelectList.add newOption
 
+  if lastSelectedForTag[name]?
+  	elementSelectList.selectedIndex = lastSelectedForTag[name]
+
   currentElementList = name
+
+  if elementSelectList.selectedIndex == -1
+    elementSelectList.selectedIndex = 0
+  updateChosenItemBasedOnSelect()
 
 
 tagButtonPressed = (name) ->

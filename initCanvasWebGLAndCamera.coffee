@@ -18,7 +18,9 @@ justInFrontOfRayCastSlot = [0,0,0]
 particleAt = newArray gridSizeX, gridSizeY, gridSizeZ, 0
 particleNextTickAt = newArray gridSizeX, gridSizeY, gridSizeZ, 0
 
+# currently hooked to no key
 pauseRendering = false
+
 pauseReactionsAndMotion = false
 
 FACE_RIGHT = 0

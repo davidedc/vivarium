@@ -34,20 +34,24 @@ keyPressed = (e) ->
     cameraZ = 0
   if key == 'p'
     pauseReactionsAndMotion = !pauseReactionsAndMotion
-  if key == 't'
-    pauseRendering = !pauseRendering
 
   if key == '1'
-    bringUpElementList "liquid"
-    if elementSelectList.selectedIndex == -1
-      elementSelectList.selectedIndex = 0
-    elementSelectList.selectedIndex = (elementSelectList.selectedIndex + elementSelectList.length - 1) % elementSelectList.length
-    updateChosenItemBasedOnSelect()
+    bringUpElementList "gas"
 
   if key == '2'
     bringUpElementList "liquid"
-    if elementSelectList.selectedIndex == -1
-      elementSelectList.selectedIndex = 0
+
+  if key == '3'
+    bringUpElementList "solid"
+
+  if key == '4'
+    bringUpElementList "flammable"
+
+  if key == 'r'
+    elementSelectList.selectedIndex = (elementSelectList.selectedIndex + elementSelectList.length - 1) % elementSelectList.length
+    updateChosenItemBasedOnSelect()
+
+  if key == 't'
     elementSelectList.selectedIndex = (elementSelectList.selectedIndex + 1) % elementSelectList.length
     updateChosenItemBasedOnSelect()
 
