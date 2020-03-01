@@ -170,7 +170,6 @@ chooseElementByName = function(name) {
 };
 
 updateChosenItemBasedOnSelect = function() {
-  debugger;
   var selectedTag;
   selectedTag = elementSelectList.item(elementSelectList.selectedIndex).text;
   lastSelectedForTag[currentElementList] = elementSelectList.selectedIndex;
@@ -1241,7 +1240,7 @@ initCanvasWebGLAndCamera = function() {
   fov = Math.PI / 3.0;
   cameraZ = canvasHeight / 2.0 / Math.tan(fov / 2.0);
   perspective(fov, canvasWidth / canvasHeight, cameraZ / 105.0, cameraZ * 15.0);
-  cameraX = -29;
+  cameraX = -32;
   cameraY = 15.5;
   cameraZ = 16;
   pitch = 0;
