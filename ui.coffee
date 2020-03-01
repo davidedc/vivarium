@@ -26,6 +26,7 @@ addTagButton = (name, label) ->
   element.setAttribute "value", label
   element.setAttribute "name", name
   element.setAttribute "onclick", "tagButtonPressed(this.name);"
+  element.setAttribute("class", "myButton")
   document.getElementById("buttons-container").appendChild(element)
 
 currentElementList = null
