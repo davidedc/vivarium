@@ -191,13 +191,14 @@ addElementButton = function(idNumber, name) {
   return document.getElementById("buttons-container").appendChild(element);
 };
 
-addTagButton = function(idNumber, name) {
+addTagButton = function(name, label) {
   var element;
   element = document.createElement("input");
   element.setAttribute("type", "button");
-  element.setAttribute("value", name);
-  element.setAttribute("name", idNumber);
-  element.setAttribute("onclick", "tagButtonPressed(this.value);");
+  element.setAttribute("value", label);
+  element.setAttribute("name", name);
+  element.setAttribute("onclick", "tagButtonPressed(this.name);");
+  element.setAttribute("class", "myButton");
   return document.getElementById("buttons-container").appendChild(element);
 };
 
@@ -234,17 +235,14 @@ tagButtonPressed = function(name) {
 };
 
 initUI = function() {
-  var eachTag, i, j, ref, results;
+  var i, j, ref;
   for (i = j = 0, ref = elementName.length; 0 <= ref ? j < ref : j > ref; i = 0 <= ref ? ++j : --j) {
     addElementButton(i, elementName[i]);
   }
-  i = 0;
-  results = [];
-  for (eachTag of tags) {
-    addTagButton(i, eachTag);
-    results.push(i++);
-  }
-  return results;
+  addTagButton("gas", "gases [1]");
+  addTagButton("liquid", "liquids [2]");
+  addTagButton("solid", "solids [3]");
+  return addTagButton("flammable", "flammables [4]");
 };
 
 elementColor = newArray(elementsCount, null);
@@ -1209,9 +1207,9 @@ instrumentation_countParticles_tf = 0;
 
 last_fps_count_time = 0;
 
-canvasWidth = 640;
+canvasWidth = 760;
 
-canvasHeight = 480;
+canvasHeight = 760;
 
 rayCastSlot = [0, 0, 0];
 
