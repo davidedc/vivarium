@@ -11,8 +11,8 @@ last_fps_count_time = 0
 # make smaller if you want to render fewer pixels
 # (and yet it will show in the same area, which is controlled
 # by the dimensions in the canvas element)
-canvasWidth = 760
-canvasHeight = 760
+canvasWidth = 640
+canvasHeight = 640
 
 rayCastSlot = [0,0,0]
 justInFrontOfRayCastSlot = [0,0,0]
