@@ -38,15 +38,15 @@ bringUpElementList = (name) ->
   if currentElementList == name then return
 
   for i in [0...elementSelectList.length]
-  	elementSelectList.remove 0
+    elementSelectList.remove 0
 
   for i from elementsInTag[name]
-  	newOption = document.createElement("option")
-  	newOption.text = i
-  	elementSelectList.add newOption
+    newOption = document.createElement("option")
+    newOption.text = i
+    elementSelectList.add newOption
 
   if lastSelectedForTag[name]?
-  	elementSelectList.selectedIndex = lastSelectedForTag[name]
+    elementSelectList.selectedIndex = lastSelectedForTag[name]
 
   currentElementList = name
 
