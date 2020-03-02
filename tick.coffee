@@ -109,22 +109,23 @@ tick = ->
     last_fps_count_time = performance.now()
     fps_frameCount = 0
 
-    debugText += ' rendering ms: ' + (render_tf - render_t0).toFixed(2)
-    debugText += ' reactions ms: ' + (particlesReactions_tf - particlesReactions_t0 + particlesMotion_tf - particlesMotion_t0 + instrumentation_countParticles_tf - instrumentation_countParticles_t0).toFixed(2)
-    debugText += ' particlesReactions ms: ' + (particlesReactions_tf - particlesReactions_t0).toFixed(2)
-    debugText += ' particlesMotion ms: ' + (particlesMotion_tf - particlesMotion_t0).toFixed(2)
-    debugText += ' instrumentation_countParticles ms: ' + (instrumentation_countParticles_tf - instrumentation_countParticles_t0).toFixed(2)
-    if pauseReactionsAndMotion
-      debugText = debugText + ' REACTIONS AND MOTION PAUSED'
-    if pauseRendering
-      debugText = debugText + ' RENDERING PAUSED'
-    debugText += ' camera x: ' + cameraX.toFixed(2)
-    debugText += ' camera y: ' + cameraY.toFixed(2)
-    debugText += ' camera z: ' + cameraZ.toFixed(2)
-    debugText += ' pitch: ' + pitch.toFixed(2)
-    debugText += ' yaw: ' + yaw.toFixed(2)
-    debugText += ' numberOfParticles: ' + numberOfParticles
-    document.getElementById('status-info').innerHTML = debugText
+    if DEBUG_UI
+      debugText += ' rendering ms: ' + (render_tf - render_t0).toFixed(2)
+      debugText += ' reactions ms: ' + (particlesReactions_tf - particlesReactions_t0 + particlesMotion_tf - particlesMotion_t0 + instrumentation_countParticles_tf - instrumentation_countParticles_t0).toFixed(2)
+      debugText += ' particlesReactions ms: ' + (particlesReactions_tf - particlesReactions_t0).toFixed(2)
+      debugText += ' particlesMotion ms: ' + (particlesMotion_tf - particlesMotion_t0).toFixed(2)
+      debugText += ' instrumentation_countParticles ms: ' + (instrumentation_countParticles_tf - instrumentation_countParticles_t0).toFixed(2)
+      if pauseReactionsAndMotion
+        debugText = debugText + ' REACTIONS AND MOTION PAUSED'
+      if pauseRendering
+        debugText = debugText + ' RENDERING PAUSED'
+      debugText += ' camera x: ' + cameraX.toFixed(2)
+      debugText += ' camera y: ' + cameraY.toFixed(2)
+      debugText += ' camera z: ' + cameraZ.toFixed(2)
+      debugText += ' pitch: ' + pitch.toFixed(2)
+      debugText += ' yaw: ' + yaw.toFixed(2)
+      debugText += ' numberOfParticles: ' + numberOfParticles
+      document.getElementById('status-info').innerHTML = debugText
 
   requestAnimationFrame tick
 

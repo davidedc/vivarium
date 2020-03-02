@@ -11,11 +11,21 @@
   <body onload="initCanvasWebGLAndCamera();" style="background-color:black;color: white;height:100%;margin: 2px;">
 
 
-    <div class="row" style="height:100%">
+    <div class="row" style="height:100%;">
       <div class="column left">
 
-      <div class="header">
-        microterrarium
+      <div class="header" style="font-weight: bold;">
+        nano terrarium
+      </div>
+
+      <input type="button" class="myButton" value="about">
+      <input type="button" class="myButton" value="keyboard / mouse help [h]">
+      <input type="button" class="myButton" value="examples">
+      <input type="button" class="myButton" value="clear">
+      <input type="button" class="myButton" value="pause [p]">
+
+      <div class="header" style="font-weight: bold; margin-top: 6px;">
+        choose element
       </div>
 
 
@@ -25,6 +35,31 @@
         <div id="buttons-container">
         </div>
 
+        <select id = "elementSelectList"
+          multiple = "multiple"
+          onclick="userManuallyClickedOnSelectListEntry()"
+          size = "10">
+         <option value = "1">　　　　　</option>
+         <option value = "2">　　　　　</option>
+         <option value = "3">　　　　　</option>
+         <option value = "4">　　　　　</option>
+         <option value = "5">　　　　　</option>
+         <option value = "6">　　　　　</option>
+         <option value = "7">　　　　　</option>
+         <option value = "8">　　　　　</option>
+         <option value = "9">　　　　　</option>
+         <option value = "10">　　　　　</option> 
+        </select>
+
+      <input type="button" class="myButton" value="small drop">
+      <input type="button" class="myButton" value="medium drop">
+      <input type="button" class="myButton" value="large drop">
+
+      <div class="header" style="font-weight: bold; margin-top: 6px;">
+        now in view
+      </div>
+
+        <!--
         <a href="./index.html?slowDown=1">slow down</a>
 
         <button onclick="scenario0()">Clear</button>
@@ -47,22 +82,8 @@
         <button onclick="scenario17()">Hourglass</button>
         <button onclick="scenario18()">Fuse grid</button>
         <button onclick="scenario19()">Fuse axes</button>
+        -->
 
-        <select id = "elementSelectList"
-          multiple = "multiple"
-          onclick="userManuallyClickedOnSelectListEntry()"
-          size = "10">
-         <option value = "1">　　　　　</option>
-         <option value = "2">　　　　　</option>
-         <option value = "3">　　　　　</option>
-         <option value = "4">　　　　　</option>
-         <option value = "5">　　　　　</option>
-         <option value = "6">　　　　　</option>
-         <option value = "7">　　　　　</option>
-         <option value = "8">　　　　　</option>
-         <option value = "9">　　　　　</option>
-         <option value = "10">　　　　　</option> 
-        </select>
 
 
       </div>

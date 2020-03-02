@@ -8,3 +8,4 @@ elementsCount = Object.keys(elements).length
 backgroundColor = [0, 0, 0]
 mouseSensitivity = 0.003
 invertHorizMouseDrag = 1
+DEBUG_UI = false

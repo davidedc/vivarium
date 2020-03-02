@@ -1,5 +1,29 @@
+select {
+	background-color: black;
+	border-color: #32eef0;
+	margin-left: 5%;
+	margin-top: 4px;
+	margin-bottom: 8px;
+	width: 90%;
+}
+
+option {
+	border-color: #32eef0;
+	border-width: 1px;
+    border-style: solid;
+    color: #32eef0;
+}
+
+option:hover,
+option:focus,
+option:active,
+option:checked {
+    background: #32eef0 !important;
+    color: black !important;
+}
+
 .header {
-	background-color:#32edf0;
+	background-color:#32eef0;
 	text-align: center;
 	display:inline-block;
 	color:#260026;
@@ -8,11 +32,12 @@
 	padding:3px 0px;
 	width: 100%;
 	text-decoration:none;
+	margin-bottom: 12px;
  }
 
 
 .myButton {
-	background-color:#32edf0;
+	background-color:#32eef0;
 	border-radius:28px;
 	border:1px solid #2a636b;
 	display:inline-block;
@@ -20,20 +45,19 @@
 	color:#260026;
 	font-family:Arial;
 	font-size:13px;
-	padding:3px 0px;
+	padding:1px 0px;
 	text-decoration:none;
 
 	margin-left: 5%;
+	margin-bottom: 6px;
 	width: 90%;
 
-	&:hover {
-	background-color:#5cbf2a;
-	}
- 	&:active {
-	  position:relative;
-	  top:1px;
-    }
  }
+
+.myButton:hover {
+	background-color: white;
+}
+
 
 * {
   box-sizing: border-box;
@@ -45,15 +69,15 @@
 }
 
 .left {
-  width: 22%;
+  width: 18%;
 
   border-right: solid;
   border-right-width: 2px;
-  border-right-color: #32edf0;
+  border-right-color: #32eef0;
 }
 
 .right {
-  width: 78%;
+  width: 82%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,4 +88,21 @@
   content: "";
   display: table;
   clear: both;
+}
+
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+	border:1px solid #32eef0;
+
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+	border:1px solid #32eef0;
+	background: #32eef0;
 }

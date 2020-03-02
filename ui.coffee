@@ -59,8 +59,9 @@ tagButtonPressed = (name) ->
   bringUpElementList name
 
 initUI = ->
-  for i in [0...elementName.length]
-    addElementButton i, elementName[i]
+  if DEBUG_UI
+    for i in [0...elementName.length]
+      addElementButton i, elementName[i]
 
   addTagButton "gas", "gases [1]"
   addTagButton "liquid", "liquids [2]"
