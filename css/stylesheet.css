@@ -67,7 +67,7 @@ option:checked {
 }
 
 .left {
-  width: 18%;
+  width: 15%;
 
   border-right: solid;
   border-right-width: 2px;
@@ -75,7 +75,7 @@ option:checked {
 }
 
 .right {
-  width: 82%;
+  width: 85%;
   display: flex;
   align-items: center;
   justify-content: center;
