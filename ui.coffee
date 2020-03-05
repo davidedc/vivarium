@@ -70,33 +70,66 @@ initUI = ->
 
 
 # Get the modal
-modal = document.getElementById('myModal')
+keyboardMouseHelpModal = document.getElementById('keyboardMouseHelpModal')
 # Get the button that opens the modal
-btn = document.getElementById('navigationHelpButton')
+navigationHelpButton = document.getElementById('navigationHelpButton')
 # Get the <span> element that closes the modal
-span = document.getElementsByClassName('close')[0]
+closeSpan = document.getElementsByClassName('close')[0]
 
 # When the user clicks on the button, open the modal
-btn.onclick = ->
-  modal.style.display = 'block'
+navigationHelpButton.onclick = ->
+  keyboardMouseHelpModal.style.display = 'block'
   return
 
 # A button in the navigation help to close the modal:
 navigationHelpCloseButton = document.getElementById('navigationHelpCloseButton')
 navigationHelpCloseButton.onclick = ->
-  modal.style.display = 'none'
+  keyboardMouseHelpModal.style.display = 'none'
   return
 
 
 # When the user clicks on <span> (x), close the modal
 
-span.onclick = ->
-  modal.style.display = 'none'
+closeSpan.onclick = ->
+  keyboardMouseHelpModal.style.display = 'none'
   return
+
+# ------------------------------------------------------------------------------
+
+# Get the modal
+examplesModal = document.getElementById('examplesModal')
+# Get the button that opens the modal
+examplesButton = document.getElementById('examplesButton')
+# Get the <span> element that closes the modal
+closeSpan = document.getElementsByClassName('close')[1]
+
+# When the user clicks on the button, open the modal
+examplesButton.onclick = ->
+  examplesModal.style.display = 'block'
+  return
+
+# A button in the navigation help to close the modal:
+examplesModalCloseButton = document.getElementById('examplesModalCloseButton')
+examplesModalCloseButton.onclick = ->
+  examplesModal.style.display = 'none'
+  return
+
+
+# When the user clicks on <span> (x), close the modal
+
+closeSpan.onclick = ->
+  examplesModal.style.display = 'none'
+  return
+
+# common to all modals ------------------------------------------
 
 # When the user clicks anywhere outside of the modal, close it
 
 window.onclick = (event) ->
-  if event.target == modal
-    modal.style.display = 'none'
+  if event.target == keyboardMouseHelpModal
+    keyboardMouseHelpModal.style.display = 'none'
+  else if event.target == examplesModal
+    examplesModal.style.display = 'none'
   return
+
+
