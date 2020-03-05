@@ -67,3 +67,36 @@ initUI = ->
   addTagButton "liquid", "liquids [2]"
   addTagButton "solid", "solids [3]"
   addTagButton "flammable", "flammables [4]"
+
+
+# Get the modal
+modal = document.getElementById('myModal')
+# Get the button that opens the modal
+btn = document.getElementById('navigationHelpButton')
+# Get the <span> element that closes the modal
+span = document.getElementsByClassName('close')[0]
+
+# When the user clicks on the button, open the modal
+btn.onclick = ->
+  modal.style.display = 'block'
+  return
+
+# A button in the navigation help to close the modal:
+navigationHelpCloseButton = document.getElementById('navigationHelpCloseButton')
+navigationHelpCloseButton.onclick = ->
+  modal.style.display = 'none'
+  return
+
+
+# When the user clicks on <span> (x), close the modal
+
+span.onclick = ->
+  modal.style.display = 'none'
+  return
+
+# When the user clicks anywhere outside of the modal, close it
+
+window.onclick = (event) ->
+  if event.target == modal
+    modal.style.display = 'none'
+  return

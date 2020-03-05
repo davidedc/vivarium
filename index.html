@@ -18,8 +18,8 @@
         nano terrarium
       </div>
 
-      <input type="button" class="myButton" value="about">
-      <input type="button" class="myButton" value="keyboard / mouse help [h]">
+      <input type="button" id="aboutButton" class="myButton" value="about">
+      <input type="button" id="navigationHelpButton" class="myButton" value="keybrd / mouse help [h]">
       <input type="button" class="myButton" value="examples">
       <input type="button" class="myButton" value="clear">
       <input type="button" class="myButton" value="pause [p]">
@@ -104,6 +104,26 @@
       </div>
       <div align="right" style="float: right; margin-right: 10px;">
         1000
+      </div>
+
+
+      <!-- The Modal -->
+      <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Keyboard/mouse help</h2>
+          </div>
+          <div class="modal-body" style="text-align: center;">
+            <img style="margin-top: 20px; margin-bottom: 20px;" src="./images/navigation-help.png" alt="John Doe">
+          </div>
+          <div class="modal-footer">
+            <input type="button" id="navigationHelpCloseButton" class="myButton" value="OK" style="width: 100px;margin: 15px;background-color: #daffff;font-size: 15px;font-weight: bold;padding: 3px;">
+          </div>
+        </div>
+
       </div>
 
         <!--
