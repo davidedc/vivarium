@@ -68,6 +68,11 @@ initUI = ->
   addTagButton "solid", "solids [3]"
   addTagButton "flammable", "flammables [4]"
 
+# ------------------------------------------------------------------------------
+#        the modals
+# ------------------------------------------------------------------------------
+
+currentlyOpenModal = null
 
 # Get the modal
 keyboardMouseHelpModal = document.getElementById('keyboardMouseHelpModal')
@@ -131,5 +136,3 @@ window.onclick = (event) ->
   else if event.target == examplesModal
     examplesModal.style.display = 'none'
   return
-
-
