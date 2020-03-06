@@ -47,13 +47,19 @@ keyPressed = (e) ->
   if key == '4'
     bringUpElementList "flammable"
 
-    elementSelectList.selectedIndex = (elementSelectList.selectedIndex + elementSelectList.length - 1) % elementSelectList.length
-    updateChosenItemBasedOnSelect()
   if key == 'e'
+    if currentlyOpenModal == examplesModal
+      examplesSelectList.selectedIndex = (examplesSelectList.selectedIndex + examplesSelectList.length - 1) % examplesSelectList.length
+    else
+      elementSelectList.selectedIndex = (elementSelectList.selectedIndex + elementSelectList.length - 1) % elementSelectList.length
+      updateChosenItemBasedOnSelect()
 
-    elementSelectList.selectedIndex = (elementSelectList.selectedIndex + 1) % elementSelectList.length
-    updateChosenItemBasedOnSelect()
   if key == 'r'
+    if currentlyOpenModal == examplesModal
+      examplesSelectList.selectedIndex = (examplesSelectList.selectedIndex + 1) % examplesSelectList.length
+    else
+      elementSelectList.selectedIndex = (elementSelectList.selectedIndex + 1) % elementSelectList.length
+      updateChosenItemBasedOnSelect()
 
 
 

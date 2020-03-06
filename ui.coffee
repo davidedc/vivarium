@@ -84,12 +84,14 @@ closeSpan = document.getElementsByClassName('close')[0]
 # When the user clicks on the button, open the modal
 navigationHelpButton.onclick = ->
   keyboardMouseHelpModal.style.display = 'block'
+  currentlyOpenModal = keyboardMouseHelpModal
   return
 
 # A button in the navigation help to close the modal:
 navigationHelpCloseButton = document.getElementById('navigationHelpCloseButton')
 navigationHelpCloseButton.onclick = ->
   keyboardMouseHelpModal.style.display = 'none'
+  currentlyOpenModal = null
   return
 
 
@@ -97,6 +99,7 @@ navigationHelpCloseButton.onclick = ->
 
 closeSpan.onclick = ->
   keyboardMouseHelpModal.style.display = 'none'
+  currentlyOpenModal = null
   return
 
 # ------------------------------------------------------------------------------
@@ -111,12 +114,14 @@ closeSpan = document.getElementsByClassName('close')[1]
 # When the user clicks on the button, open the modal
 examplesButton.onclick = ->
   examplesModal.style.display = 'block'
+  currentlyOpenModal = examplesModal
   return
 
 # A button in the navigation help to close the modal:
 examplesModalCloseButton = document.getElementById('examplesModalCloseButton')
 examplesModalCloseButton.onclick = ->
   examplesModal.style.display = 'none'
+  currentlyOpenModal = null
   return
 
 
@@ -124,6 +129,7 @@ examplesModalCloseButton.onclick = ->
 
 closeSpan.onclick = ->
   examplesModal.style.display = 'none'
+  currentlyOpenModal = null
   return
 
 # common to all modals ------------------------------------------
@@ -133,6 +139,8 @@ closeSpan.onclick = ->
 window.onclick = (event) ->
   if event.target == keyboardMouseHelpModal
     keyboardMouseHelpModal.style.display = 'none'
+    currentlyOpenModal = null
   else if event.target == examplesModal
     examplesModal.style.display = 'none'
+    currentlyOpenModal = null
   return
