@@ -47,13 +47,13 @@ keyPressed = (e) ->
   if key == '4'
     bringUpElementList "flammable"
 
-  if key == 'r'
     elementSelectList.selectedIndex = (elementSelectList.selectedIndex + elementSelectList.length - 1) % elementSelectList.length
     updateChosenItemBasedOnSelect()
+  if key == 'e'
 
-  if key == 't'
     elementSelectList.selectedIndex = (elementSelectList.selectedIndex + 1) % elementSelectList.length
     updateChosenItemBasedOnSelect()
+  if key == 'r'
 
 
 
