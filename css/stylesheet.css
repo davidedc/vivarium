@@ -10,8 +10,8 @@ select {
 option {
 	border-color: #32eef0;
 	border-width: 1px;
-    border-style: solid;
-    color: #32eef0;
+  border-style: solid;
+  color: #32eef0;
 }
 
 option:hover,
