@@ -14,6 +14,12 @@ option {
   color: #32eef0;
 }
 
+
+#examplesSelectList .option {
+  border-color: #bff2f3;
+  color: #32eef0;
+}
+
 option:hover,
 option:focus,
 option:active,
