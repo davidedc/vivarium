@@ -24,18 +24,18 @@ tick = ->
   
   # wasd, shift and space navigate similar to minecraft
   cameraMoveAmount = 0.5
-  if isKeyPressed["87"] # w
+  if isKeyPressed["w"]
     cameraMoveForward += cameraMoveAmount
-  if isKeyPressed["65"] # a
+  if isKeyPressed["a"]
     cameraMoveSide += cameraMoveAmount
-  if isKeyPressed["83"] # s
+  if isKeyPressed["s"]
     cameraMoveForward -= cameraMoveAmount
-  if isKeyPressed["68"] # d
+  if isKeyPressed["d"]
     cameraMoveSide -= cameraMoveAmount
-  if isKeyPressed["16"] # shift
+  if isKeyPressed["Shift"]
     cameraMoveUp -= cameraMoveAmount
     pitch += cameraMoveAmount/50
-  if isKeyPressed["32"] # space
+  if isKeyPressed[" "]
     cameraMoveUp += cameraMoveAmount
     pitch -= cameraMoveAmount/50
 

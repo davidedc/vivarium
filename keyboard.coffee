@@ -5,13 +5,13 @@
 isKeyPressed = {}
 
 handleKeydown = (e) ->
-  isKeyPressed[e.which + ""] = true
+  isKeyPressed[e.key] = true
   return true
 
 
 handleKeyup = (e) ->
-  if isKeyPressed[e.which + ""]
-    delete isKeyPressed[e.which + ""]
+  if isKeyPressed[e.key]
+    delete isKeyPressed[e.key]
 
   # All of these keys don't trigger a keypress event,
   # so we'll have to handle them here
