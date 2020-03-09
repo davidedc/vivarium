@@ -17,7 +17,7 @@ handleKeyup = (e) ->
   # so we'll have to handle them here
 
   # Backspace or delete
-  if e.which == 8 or e.which == 46
+  if e.key == 'Backspace' or e.key == 'Delete'
     if rayCastSlot[0] != -1
       particleAt[rayCastSlot[0]][rayCastSlot[1]][rayCastSlot[2]] = 0
 
