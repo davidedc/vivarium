@@ -64,10 +64,14 @@ keyPressed = (e) ->
       elementSelectList.selectedIndex = (elementSelectList.selectedIndex + 1) % elementSelectList.length
       updateChosenItemBasedOnSelect()
 
-  if key == 'Enter'
+  if key == 'Enter' and currentlyOpenModal
     if currentlyOpenModal == examplesModal
       startSelectedExampleAndDismissExamplesModal()
-      e.preventDefault()
+    else
+      dismissModal currentlyOpenModal
+    # needed because if the button is focused, then
+    # "enter" will immediately re-open the modal      
+    e.preventDefault()
 
 
 
