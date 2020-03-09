@@ -21,6 +21,9 @@ handleKeyup = (e) ->
     if rayCastSlot[0] != -1
       particleAt[rayCastSlot[0]][rayCastSlot[1]][rayCastSlot[2]] = 0
 
+  if e.key == 'Escape' and currentlyOpenModal
+    dismissModal currentlyOpenModal
+
   return true
 
 keyPressed = (e) ->
@@ -60,6 +63,11 @@ keyPressed = (e) ->
     else
       elementSelectList.selectedIndex = (elementSelectList.selectedIndex + 1) % elementSelectList.length
       updateChosenItemBasedOnSelect()
+
+  if key == 'Enter'
+    if currentlyOpenModal == examplesModal
+      startSelectedExampleAndDismissExamplesModal()
+      e.preventDefault()
 
 
 

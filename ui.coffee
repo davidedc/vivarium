@@ -76,71 +76,46 @@ currentlyOpenModal = null
 
 # Get the modal
 keyboardMouseHelpModal = document.getElementById('keyboardMouseHelpModal')
-# Get the button that opens the modal
-navigationHelpButton = document.getElementById('navigationHelpButton')
-# Get the <span> element that closes the modal
-closeSpan = document.getElementsByClassName('close')[0]
 
 # When the user clicks on the button, open the modal
-navigationHelpButton.onclick = ->
+openKeyboardMouseHelpModal = ->
   keyboardMouseHelpModal.style.display = 'block'
   currentlyOpenModal = keyboardMouseHelpModal
   return
 
-# A button in the navigation help to close the modal:
-navigationHelpCloseButton = document.getElementById('navigationHelpCloseButton')
-navigationHelpCloseButton.onclick = ->
-  keyboardMouseHelpModal.style.display = 'none'
-  currentlyOpenModal = null
-  return
-
-
-# When the user clicks on <span> (x), close the modal
-
-closeSpan.onclick = ->
-  keyboardMouseHelpModal.style.display = 'none'
-  currentlyOpenModal = null
-  return
+dismissNavigationHelpModal = ->
+  dismissModal keyboardMouseHelpModal
 
 # ------------------------------------------------------------------------------
 
 # Get the modal
 examplesModal = document.getElementById('examplesModal')
-# Get the button that opens the modal
-examplesButton = document.getElementById('examplesButton')
-# Get the <span> element that closes the modal
-closeSpan = document.getElementsByClassName('close')[1]
 
-# When the user clicks on the button, open the modal
-examplesButton.onclick = ->
+openExamplesModal = ->
   examplesModal.style.display = 'block'
   currentlyOpenModal = examplesModal
   return
 
-# A button in the navigation help to close the modal:
-examplesModalCloseButton = document.getElementById('examplesModalCloseButton')
-examplesModalCloseButton.onclick = ->
-  examplesModal.style.display = 'none'
-  currentlyOpenModal = null
-  return
+startSelectedExample = ->
+  examplesSelectList = document.getElementById("examplesSelectList").options
+  window[examplesSelectList.item(examplesSelectList.selectedIndex).value].call()
 
+dismissExamplesModal = ->
+  dismissModal examplesModal
 
-# When the user clicks on <span> (x), close the modal
+startSelectedExampleAndDismissExamplesModal = ->
+  startSelectedExample()
+  dismissExamplesModal()  
 
-closeSpan.onclick = ->
-  examplesModal.style.display = 'none'
-  currentlyOpenModal = null
-  return
 
 # common to all modals ------------------------------------------
 
 # When the user clicks anywhere outside of the modal, close it
 
 window.onclick = (event) ->
-  if event.target == keyboardMouseHelpModal
-    keyboardMouseHelpModal.style.display = 'none'
-    currentlyOpenModal = null
-  else if event.target == examplesModal
-    examplesModal.style.display = 'none'
-    currentlyOpenModal = null
-  return
+  if event.target == keyboardMouseHelpModal or event.target == examplesModal
+    dismissModal event.target
+
+dismissModal = (whichModal) ->
+  whichModal.style.display = 'none'
+  currentlyOpenModal = null
