@@ -1,4 +1,4 @@
-scenario0 = ->
+clearAllSlots = ->
   for x in [0...gridSizeX]
     for y in [0...gridSizeY]
       for z in [0...gridSizeZ]
