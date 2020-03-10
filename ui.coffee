@@ -94,6 +94,7 @@ examplesModal = document.getElementById('examplesModal')
 openExamplesModal = ->
   examplesModal.style.display = 'block'
   currentlyOpenModal = examplesModal
+  document.getElementById("examplesSelectList").focus()
   return
 
 startSelectedExample = ->
