@@ -266,6 +266,7 @@ examplesModal = document.getElementById('examplesModal');
 openExamplesModal = function() {
   examplesModal.style.display = 'block';
   currentlyOpenModal = examplesModal;
+  document.getElementById("examplesSelectList").focus();
 };
 
 startSelectedExample = function() {
@@ -1944,8 +1945,8 @@ keyPressed = function(e) {
     } else {
       dismissModal(currentlyOpenModal);
     }
-    return e.preventDefault();
   }
+  return e.preventDefault();
 };
 
 window.addEventListener('keydown', handleKeydown);
