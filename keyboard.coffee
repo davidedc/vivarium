@@ -69,9 +69,15 @@ keyPressed = (e) ->
       startSelectedExampleAndDismissExamplesModal()
     else
       dismissModal currentlyOpenModal
-    # needed because if the button is focused, then
-    # "enter" will immediately re-open the modal      
-    e.preventDefault()
+
+  # needed for at least a couple of reasons:
+  # 1) if a button to open a modal is focused, then when the modal
+  # is open, "enter" will close and then immediately re-open the modal
+  # 2) when pressing "w" to go forward, if the elements select-box is
+  # open then _that_ will also catch the key and will cycle through
+  # elements that start with "w"
+
+  e.preventDefault()
 
 
 
