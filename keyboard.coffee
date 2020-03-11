@@ -43,6 +43,10 @@ keyPressed = (e) ->
     cameraZ = 0
   if key == 'p'
     pauseReactionsAndMotion = !pauseReactionsAndMotion
+    if pauseReactionsAndMotion
+      document.getElementById('pauseButton').value = 'resume [p]'
+    else 
+      document.getElementById('pauseButton').value = 'pause [p]'
 
   if key == '1'
     bringUpElementList "gas"
