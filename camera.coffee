@@ -75,11 +75,11 @@ camera = (eyeX, eyeY, eyeZ, centerX, centerY, centerZ, upX, upY, upZ) ->
   modelView.set cam
 
 
-cameraVectorAhead = (forwardHowMuch, leftHowMuch, upHowMuch) ->
+fromCameraCalculateMoveOf = (forwardHowMuch, leftHowMuch, upHowMuch) ->
   tmpX = Math.cos(yaw) * forwardHowMuch + Math.sin(yaw) * leftHowMuch
   tmpY = Math.cos(yaw) * leftHowMuch - Math.sin(yaw) * forwardHowMuch
   tmpZ = Math.sin(pitch) * forwardHowMuch + Math.cos(pitch) * upHowMuch
-  return [tmpX, tmpY, tmpZ]
+  return [cameraX + tmpX, cameraY + tmpY, cameraZ + tmpZ]
 
 updateCamera = (cameraMoveForward, cameraMoveSide, cameraMoveUp) ->
   # past these angles some really
@@ -96,12 +96,6 @@ updateCamera = (cameraMoveForward, cameraMoveSide, cameraMoveUp) ->
     yaw = yaw + Math.PI * 2
 
 
-  [cameraToAddPosX, cameraToAddPosY, cameraToAddPosZ] = cameraVectorAhead cameraMoveForward, cameraMoveSide, cameraMoveUp
-  cameraX += cameraToAddPosX
-  cameraY += cameraToAddPosY
-  cameraZ += cameraToAddPosZ + cameraMoveUp/2
+  [cameraX, cameraY, cameraZ] = fromCameraCalculateMoveOf cameraMoveForward, cameraMoveSide, cameraMoveUp * 2
 
-  [cameraToAddLookX, cameraToAddLookY, cameraToAddLookZ] = cameraVectorAhead 1,0,0
-  cameraDirectionX = cameraX + cameraToAddLookX
-  cameraDirectionY = cameraY + cameraToAddLookY
-  cameraDirectionZ = cameraZ + cameraToAddLookZ
+  [cameraDirectionX, cameraDirectionY, cameraDirectionZ] = fromCameraCalculateMoveOf 1,0,0
