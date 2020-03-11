@@ -23,7 +23,11 @@ tick = ->
   # tick fequency rather than to key repeat frequency.
   
   # wasd, shift and space navigate similar to minecraft
+  cameraMoveForward = 0.0
+  cameraMoveSide = 0.0
+  cameraMoveUp = 0.0
   cameraMoveAmount = 0.5
+
   if isKeyPressed["w"]
     cameraMoveForward += cameraMoveAmount
   if isKeyPressed["a"]
@@ -39,7 +43,7 @@ tick = ->
     cameraMoveUp += cameraMoveAmount
     pitch -= cameraMoveAmount/50
 
-  updateCamera()
+  updateCamera cameraMoveForward, cameraMoveSide, cameraMoveUp
 
   rayCastSlot[0] = -1
   justInFrontOfRayCastSlot[0] = -1

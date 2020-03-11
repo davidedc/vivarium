@@ -8,10 +8,6 @@ cameraDirectionX = 0.0
 cameraDirectionY = 0.0
 cameraDirectionZ = 0.0
 
-cameraMoveForward = 0.0
-cameraMoveSide = 0.0
-cameraMoveUp = 0.0
-
 pitch = 0
 yaw = 0
 
@@ -85,7 +81,7 @@ cameraVectorAhead = (forwardHowMuch, leftHowMuch, upHowMuch) ->
   tmpZ = Math.sin(pitch) * forwardHowMuch + Math.cos(pitch) * upHowMuch
   return [tmpX, tmpY, tmpZ]
 
-updateCamera = ->
+updateCamera = (cameraMoveForward, cameraMoveSide, cameraMoveUp) ->
   # past these angles some really
   # strange stuff starts to happen
   tiltLimit = 0
@@ -109,7 +105,3 @@ updateCamera = ->
   cameraDirectionX = cameraX + cameraToAddLookX
   cameraDirectionY = cameraY + cameraToAddLookY
   cameraDirectionZ = cameraZ + cameraToAddLookZ
-
-  cameraMoveForward = 0
-  cameraMoveSide = 0
-  cameraMoveUp = 0
