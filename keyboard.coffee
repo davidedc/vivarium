@@ -64,11 +64,14 @@ keyPressed = (e) ->
       elementSelectList.selectedIndex = (elementSelectList.selectedIndex + 1) % elementSelectList.length
       updateChosenItemBasedOnSelect()
 
-  if key == 'Enter' and currentlyOpenModal
-    if currentlyOpenModal == examplesModal
-      startSelectedExampleAndDismissExamplesModal()
+  if key == 'Enter'
+    if currentlyOpenModal
+      if currentlyOpenModal == examplesModal
+        startSelectedExampleAndDismissExamplesModal()
+      else
+        dismissModal currentlyOpenModal
     else
-      dismissModal currentlyOpenModal
+      placeElement()
 
   # needed for at least a couple of reasons:
   # 1) if a button to open a modal is focused, then when the modal

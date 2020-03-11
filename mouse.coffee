@@ -17,10 +17,14 @@ canvasElement.addEventListener 'mousemove', (e) ->
   if e.buttons == 1 then mouseDraggedLeftButton()
   return
 
+# TODO for sure this the "mouse" section is not the best place for this, move it
+placeElement = ->
+  if justInFrontOfRayCastSlot[0] != -1 and elementChosenByUserToBeAddedToWorld != 0
+    particleAt[justInFrontOfRayCastSlot[0]][justInFrontOfRayCastSlot[1]][justInFrontOfRayCastSlot[2]] = elementChosenByUserToBeAddedToWorld
+
 canvasElement.addEventListener 'mousedown', (e) ->
   if e.buttons == 2
-    if justInFrontOfRayCastSlot[0] != -1 and elementChosenByUserToBeAddedToWorld != 0
-      particleAt[justInFrontOfRayCastSlot[0]][justInFrontOfRayCastSlot[1]][justInFrontOfRayCastSlot[2]] = elementChosenByUserToBeAddedToWorld
+    placeElement()
 
 mouseDraggedLeftButton = ->
   deltaX = (previousMouseX - mouseX) * invertHorizMouseDrag
