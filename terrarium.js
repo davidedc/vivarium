@@ -1957,12 +1957,14 @@ handleKeyup = function(e) {
 keyPressed = function(e) {
   var key;
   key = e.key;
+  if (key === 'g' && (currentlyOpenModal == null)) {
+    openExamplesModal();
+  }
+  if (key === 'h' && (currentlyOpenModal == null)) {
+    openKeyboardMouseHelpModal();
+  }
   if (key === 'o') {
-    pitch = 0;
-    yaw = 0;
-    cameraX = 0;
-    cameraY = 0;
-    cameraZ = 0;
+    clearAllSlots();
   }
   if (key === 'p') {
     pauseReactionsAndMotion = !pauseReactionsAndMotion;
