@@ -81,7 +81,7 @@ keyPressed = (e) ->
       else
         dismissModal currentlyOpenModal
     else
-      placeElement()
+      placeUserPickedElementInSelectedSlot()
 
   # needed for at least a couple of reasons:
   # 1) if a button to open a modal is focused, then when the modal

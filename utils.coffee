@@ -118,3 +118,7 @@ size = (aWidth, aHeight) ->
     canvasElement.style.removeProperty 'height'
   canvasElement.width = aWidth or 100
   canvasElement.height = aHeight or 100
+
+placeUserPickedElementInSelectedSlot = ->
+  if justInFrontOfRayCastSlot[0] != -1 and elementChosenByUserToBeAddedToWorld != 0
+    particleAt[justInFrontOfRayCastSlot[0]][justInFrontOfRayCastSlot[1]][justInFrontOfRayCastSlot[2]] = elementChosenByUserToBeAddedToWorld
