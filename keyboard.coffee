@@ -37,12 +37,15 @@ handleKeyup = (e) ->
 keyPressed = (e) ->
   key = e.key
 
+  if key == 'g' and !currentlyOpenModal?
+    openExamplesModal()
+
+  if key == 'h' and !currentlyOpenModal?
+    openKeyboardMouseHelpModal()
+
   if key == 'o'
-    pitch = 0
-    yaw = 0
-    cameraX = 0
-    cameraY = 0
-    cameraZ = 0
+    clearAllSlots()    
+
   if key == 'p'
     pauseReactionsAndMotion = !pauseReactionsAndMotion
     if pauseReactionsAndMotion
