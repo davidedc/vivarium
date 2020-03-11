@@ -1,3 +1,49 @@
+# -------------------------------------------------------
+# Routine to smooth values, used for camera movement
+# it's a subtle change but it makes controls feel far more
+# dynamic and polished.
+# (adapted from http://phrogz.net/js/framerate-independent-low-pass-filter.html )
+# -------------------------------------------------------
+
+# To keep things simple and not drown in abstraction, we baked-in
+# in this code that we are only smoothing six variables
+# i.e. camera position and orientation vectors. It would be easy to
+# make the code more generic, and yet it would be of no use and
+# more opaque
+
+smoothed = [0,0,0,0,0] # or some likely initial value
+smoothing = [200,200,70,50,50] # or whatever is desired
+smoothThreshold = [0.1,0.1,0.1,0,0] # or whatever is desired
+startingTime = new Date
+lastUpdate = [startingTime,startingTime,startingTime,startingTime,startingTime,startingTime]
+
+smoothedValue = (newValue, whichVariable) ->
+  now = new Date
+  elapsedTime = now - lastUpdate[whichVariable]
+  if Math.abs(smoothed[whichVariable]) < smoothThreshold[whichVariable]
+    smoothed[whichVariable] = newValue
+  else
+    smoothed[whichVariable] += elapsedTime * (newValue - smoothed[whichVariable]) / smoothing[whichVariable]
+  lastUpdate[whichVariable] = now
+  smoothed[whichVariable]
+
+smoothed_FWD = (newValue) ->
+  smoothedValue newValue, 0
+
+smoothed_SIDE = (newValue) ->
+  smoothedValue newValue, 1
+
+smoothed_UP = (newValue) ->
+  smoothedValue newValue, 2
+
+smoothed_YAW = (newValue) ->
+  smoothedValue newValue, 3
+
+smoothed_PITCH = (newValue) ->
+  smoothedValue newValue, 4
+
+# ------------------------------------------------------------
+
 getGLContext = (canvas) ->
   ctxNames = [
     'experimental-webgl'

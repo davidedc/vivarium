@@ -27,6 +27,8 @@ tick = ->
   cameraMoveSide = 0.0
   cameraMoveUp = 0.0
   cameraMoveAmount = 0.5
+  cameraYawDelta = 0.0
+  cameraPitchDelta = 0.0
 
   if isKeyPressed["w"]
     cameraMoveForward += cameraMoveAmount
@@ -43,7 +45,22 @@ tick = ->
     cameraMoveUp += cameraMoveAmount
     pitch -= cameraMoveAmount/50
 
-  updateCamera cameraMoveForward, cameraMoveSide, cameraMoveUp
+  if isKeyPressed["ArrowLeft"]
+    cameraYawDelta -= 0.05
+  if isKeyPressed["ArrowRight"]
+    cameraYawDelta += 0.05
+  if isKeyPressed["ArrowUp"]
+    cameraPitchDelta -= 0.05
+  if isKeyPressed["ArrowDown"]
+    cameraPitchDelta += 0.05
+
+
+
+  yaw += smoothed_YAW cameraYawDelta
+  pitch += smoothed_PITCH cameraPitchDelta
+
+
+  updateCamera (smoothed_FWD cameraMoveForward), (smoothed_SIDE cameraMoveSide), (smoothed_UP cameraMoveUp)
 
   rayCastSlot[0] = -1
   justInFrontOfRayCastSlot[0] = -1
