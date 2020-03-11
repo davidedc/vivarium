@@ -44,15 +44,16 @@ tick = ->
   if isKeyPressed[" "]
     cameraMoveUp += cameraMoveAmount
     pitch -= cameraMoveAmount/50
-
-  if isKeyPressed["ArrowLeft"]
-    cameraYawDelta -= 0.05
-  if isKeyPressed["ArrowRight"]
-    cameraYawDelta += 0.05
-  if isKeyPressed["ArrowUp"]
-    cameraPitchDelta -= 0.05
-  if isKeyPressed["ArrowDown"]
-    cameraPitchDelta += 0.05
+  
+  if currentlyOpenModal != examplesModal
+    if isKeyPressed["ArrowLeft"]
+      cameraYawDelta -= 0.05
+    if isKeyPressed["ArrowRight"]
+      cameraYawDelta += 0.05
+    if isKeyPressed["ArrowUp"]
+      cameraPitchDelta -= 0.05
+    if isKeyPressed["ArrowDown"]
+      cameraPitchDelta += 0.05
 
 
 

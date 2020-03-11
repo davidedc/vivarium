@@ -7,9 +7,11 @@ isKeyPressed = {}
 handleKeydown = (e) ->
   isKeyPressed[e.key] = true
 
-  # don't scroll page when user presses arrows
+  # prevent default (i.e. don't scroll page) when user presses arrows
   # (arrows control camera orientation and the page shouldn't scroll anyways)
-  if e.key == "ArrowLeft" or e.key == "ArrowRight" or e.key == "ArrowUp" or e.key == "ArrowDown"
+  # (however, do allow default when the examples modal is up, in which case the
+  # arrows move the selected examples up/down)
+  if (currentlyOpenModal != examplesModal) and (e.key == "ArrowLeft" or e.key == "ArrowRight" or e.key == "ArrowUp" or e.key == "ArrowDown")
     e.preventDefault()
 
   return true
